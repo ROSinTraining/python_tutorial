@@ -21,7 +21,7 @@ def findOdd(start, end):
 
 if __name__ == '__main__':
     start = 0
-    end = 19000000
+    end = 190000
 
     t1 = Thread(target=findEven, args=(start, end,))
     t2 = Thread(target=findOdd, args=(start, end,))
@@ -31,13 +31,14 @@ if __name__ == '__main__':
     t1.start()
     t2.start()
 
-    t1.join()
-    t2.join()
     
     print(" --- Excution time: " + str(time.time() - start_time))
 
     print("Odd Sum: " + str(OddSum))
     print("Enven Sum: " + str(EvenSum))
+
+    t1.join()
+    t2.join()
 
 
 # if __name__ == '__main__':
